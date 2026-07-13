@@ -193,7 +193,7 @@ export const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full rounded-xl bg-[#5465FF] py-4 font-semibold text-white transition hover:bg-[#4354F5]"
+                className="w-full rounded-xl bg-[#5465FF] cursor-pointer py-4 font-semibold text-white transition hover:bg-[#4354F5]"
               >
                 Send Message
               </button>

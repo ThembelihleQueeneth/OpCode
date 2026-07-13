@@ -6,8 +6,7 @@ const plans = [
     price: "R2 500",
     priceNote: "Starting from",
     features: ["1–3 pages", "Responsive design", "Contact form", "Basic SEO"],
-    cta: "Choose plan",
-    featured: false,
+    
   },
   {
     name: "Standard",
@@ -20,8 +19,8 @@ const plans = [
       "SEO optimization",
       "Google Maps",
     ],
-    cta: "Choose plan",
-    featured: true,
+   
+    
   },
   {
     name: "Enterprise",
@@ -34,8 +33,7 @@ const plans = [
       "Advanced SEO",
       "Priority support",
     ],
-    cta: "Request quote",
-    featured: false,
+    
   },
 ];
 
@@ -95,21 +93,16 @@ export const Pricing = () => {
                 ))}
               </ul>
 
-              <button
-                className={
-                  plan.featured
-                    ? "mt-10 w-full rounded-xl bg-[#5465FF] py-3 font-semibold text-white shadow-lg shadow-[#5465FF]/25 transition hover:bg-[#4354F5]"
-                    : "mt-10 w-full rounded-xl border border-gray-300 py-3 font-semibold text-gray-900 transition hover:border-[#5465FF] hover:text-[#5465FF]"
-                }
-              >
-                {plan.cta}
-              </button>
+              
             </div>
           ))}
         </div>
+          <button className="mt-6 cursor-pointer ml-250 w-50 rounded-xl bg-[#5465FF] py-3 font-semibold text-white shadow-lg shadow-[#5465FF]/25 transition hover:bg-[#4354F5]">
+        Let's talk
+      </button>
 
         {/* Additional services */}
-        <div className="mt-20 flex flex-col items-center gap-6 rounded-3xl bg-[#5465FF] p-10 text-center text-white sm:flex-row sm:justify-between sm:text-left">
+        <div className="mt-15 flex flex-col items-center gap-6 rounded-3xl bg-[#5465FF] p-10 text-center text-white sm:flex-row sm:justify-between sm:text-left">
           <div>
             <h3 className="text-2xl font-bold lg:text-3xl">
               Need something custom?
@@ -119,6 +112,7 @@ export const Pricing = () => {
               maintenance, website redesigns and custom web applications.
             </p>
           </div>
+        
 
           <div className="flex-shrink-0 rounded-2xl bg-white/10 px-6 py-4">
             <p className="text-sm text-white/70">Add-ons from</p>
@@ -126,6 +120,7 @@ export const Pricing = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };
