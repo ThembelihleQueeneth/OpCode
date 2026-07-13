@@ -4,44 +4,74 @@ import { HiMenu, HiX } from "react-icons/hi";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-      <nav className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-lg">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
-        {/* Logo */}
-        <h1 className="text-3xl font-black">
-          Op<span className="text-[#5465FF]">Code</span>
-        </h1>
+        {/* Left Side */}
+        <div className="flex items-center gap-16">
 
-        {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-10 font-medium text-gray-600">
-          <li className="hover:text-[#5465FF] cursor-pointer transition">
-            Home
-          </li>
-          <li className="hover:text-[#5465FF] cursor-pointer transition">
-            Pricing
-          </li>
-          <li className="hover:text-[#5465FF] cursor-pointer transition">
-            About
-          </li>
-          
-        </ul>
+          {/* Logo */}
+          <a href="#" className="text-3xl font-black">
+            Op<span className="text-[#5465FF]">Code</span>
+          </a>
+
+          {/* Desktop Navigation */}
+          <ul className="hidden lg:flex items-center gap-8 font-medium text-gray-600">
+            <li>
+              <a
+                href="#"
+                className="transition hover:text-[#5465FF]"
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#about"
+                className="transition hover:text-[#5465FF]"
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#pricing"
+                className="transition hover:text-[#5465FF]"
+              >
+                Pricing
+              </a>
+            </li>
+
+           
+          </ul>
+        </div>
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center gap-4">
-          <button className="px-5 py-2.5 rounded-xl border border-[#5465FF] text-[#5465FF] hover:bg-[#5465FF] hover:text-white transition">
+          <a
+            href="#contact"
+            className="rounded-xl border border-[#5465FF] px-5 py-2.5 font-medium text-[#5465FF] transition hover:bg-[#5465FF] hover:text-white"
+          >
             Contact Us
-          </button>
+          </a>
 
-          <button className="px-6 py-3 rounded-xl bg-[#5465FF] text-white hover:bg-[#4354F5] transition">
+          <a
+            href="#contact"
+            className="rounded-xl bg-[#5465FF] px-6 py-3 font-medium text-white shadow-lg shadow-[#5465FF]/20 transition hover:bg-[#4354F5]"
+          >
             Schedule Appointment
-          </button>
+          </a>
         </div>
 
-        {/* Mobile Button */}
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-3xl text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
+          className="rounded-lg p-2 text-3xl text-gray-700 transition hover:bg-gray-100 lg:hidden"
         >
           {isOpen ? <HiX /> : <HiMenu />}
         </button>
@@ -49,30 +79,52 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-[500px]" : "max-h-0"
+        className={`overflow-hidden bg-white transition-all duration-300 lg:hidden ${
+          isOpen ? "max-h-96 border-t border-gray-100" : "max-h-0"
         }`}
       >
-        <div className="px-6 pb-6 bg-white border-t border-gray-100">
+        <div className="px-6 py-6">
 
-          <ul className="flex flex-col gap-5 py-6 text-lg font-medium">
-            <li className="hover:text-[#5465FF] cursor-pointer">Home</li>
-            <li className="hover:text-[#5465FF] cursor-pointer">Services</li>
-            <li className="hover:text-[#5465FF] cursor-pointer">Pricing</li>
-            <li className="hover:text-[#5465FF] cursor-pointer">Portfolio</li>
-            <li className="hover:text-[#5465FF] cursor-pointer">About</li>
-            <li className="hover:text-[#5465FF] cursor-pointer">Contact</li>
+          <ul className="space-y-5 text-lg font-medium">
+            <li>
+              <a href="#" onClick={closeMenu}>
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="#about" onClick={closeMenu}>
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="#pricing" onClick={closeMenu}>
+                Pricing
+              </a>
+            </li>
+
+           
           </ul>
 
-          <div className="flex flex-col gap-3">
-            <button className="w-full rounded-xl border border-[#5465FF] py-3 text-[#5465FF] font-semibold hover:bg-[#5465FF] hover:text-white transition">
+          <div className="mt-8 flex flex-col gap-3">
+            <a
+              href="#contact"
+              onClick={closeMenu}
+              className="rounded-xl border border-[#5465FF] py-3 text-center font-semibold text-[#5465FF] transition hover:bg-[#5465FF] hover:text-white"
+            >
               Contact Us
-            </button>
+            </a>
 
-            <button className="w-full rounded-xl bg-[#5465FF] py-3 text-white font-semibold hover:bg-[#4354F5] transition">
+            <a
+              href="#contact"
+              onClick={closeMenu}
+              className="rounded-xl bg-[#5465FF] py-3 text-center font-semibold text-white transition hover:bg-[#4354F5]"
+            >
               Schedule Appointment
-            </button>
+            </a>
           </div>
+
         </div>
       </div>
     </header>
