@@ -6,7 +6,6 @@ const plans = [
     price: "R2 500",
     priceNote: "Starting from",
     features: ["1–3 pages", "Responsive design", "Contact form", "Basic SEO"],
-    
   },
   {
     name: "Standard",
@@ -19,8 +18,6 @@ const plans = [
       "SEO optimization",
       "Google Maps",
     ],
-   
-    
   },
   {
     name: "Enterprise",
@@ -33,7 +30,6 @@ const plans = [
       "Advanced SEO",
       "Priority support",
     ],
-    
   },
 ];
 
@@ -62,19 +58,11 @@ export const Pricing = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={
-                plan.featured
-                  ? "relative rounded-3xl border-2 border-[#5465FF] bg-white p-8 shadow-xl lg:-my-4 lg:py-12"
-                  : "rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-              }
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
-              {plan.featured && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[#5465FF] px-4 py-2 text-sm font-semibold text-white">
-                  Most popular
-                </span>
-              )}
-
-              <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
+              <h3 className="text-2xl font-bold text-gray-900">
+                {plan.name}
+              </h3>
 
               <p className="mt-3 text-5xl font-bold text-[#5465FF]">
                 {plan.price}
@@ -86,20 +74,24 @@ export const Pricing = () => {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
                     <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#5465FF]/10">
-                      <Check size={12} className="text-[#5465FF]" strokeWidth={3} />
+                      <Check
+                        size={12}
+                        className="text-[#5465FF]"
+                        strokeWidth={3}
+                      />
                     </span>
+
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
               </ul>
-
-              
             </div>
           ))}
         </div>
-          <button className="mt-6 cursor-pointer ml-250 w-50 rounded-xl bg-[#5465FF] py-3 font-semibold text-white shadow-lg shadow-[#5465FF]/25 transition hover:bg-[#4354F5]">
-        Let's talk
-      </button>
+
+        <button className="mt-6 w-full rounded-xl bg-[#5465FF] py-3 font-semibold text-white shadow-lg shadow-[#5465FF]/25 transition hover:bg-[#4354F5]">
+          Let's talk
+        </button>
 
         {/* Additional services */}
         <div className="mt-15 flex flex-col items-center gap-6 rounded-3xl bg-[#5465FF] p-10 text-center text-white sm:flex-row sm:justify-between sm:text-left">
@@ -107,12 +99,12 @@ export const Pricing = () => {
             <h3 className="text-2xl font-bold lg:text-3xl">
               Need something custom?
             </h3>
+
             <p className="mt-2 max-w-xl text-white/80">
               We also offer AI integration, booking systems, e-commerce,
               maintenance, website redesigns and custom web applications.
             </p>
           </div>
-        
 
           <div className="flex-shrink-0 rounded-2xl bg-white/10 px-6 py-4">
             <p className="text-sm text-white/70">Add-ons from</p>
@@ -120,7 +112,6 @@ export const Pricing = () => {
           </div>
         </div>
       </div>
-      
     </section>
   );
 };
