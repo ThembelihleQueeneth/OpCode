@@ -19,9 +19,6 @@ export const Navbar = () => {
             Home
           </li>
           <li className="hover:text-[#5465FF] cursor-pointer transition">
-            Services
-          </li>
-          <li className="hover:text-[#5465FF] cursor-pointer transition">
             Pricing
           </li>
           <li className="hover:text-[#5465FF] cursor-pointer transition">
